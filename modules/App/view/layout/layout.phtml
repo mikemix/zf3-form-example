@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <?= $this->headTitle('ZF Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+    <?= $this->headMeta()
+        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+    ?>
+
+    <?= $this->headLink() ?>
+    <?= $this->headScript() ?>
+</head>
+<body>
+
+<a class="navbar-brand" href="<?= $this->url('home') ?>">
+    Skeleton app
+</a>
+
+<hr>
+
+<main>
+    <?= $this->content ?>
+</main>
+
+<hr>
+<footer>
+    <p>&copy; 2005 - <?= date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
+</footer>
+
+<?= $this->inlineScript() ?>
+</body>
+</html>

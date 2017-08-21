@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  app:
+    image: php:7.1-alpine
+    volumes:
+      - .:/var/www
+    ports:
+      - 8080:80
+    working_dir: /var/www
+    command: ["php", "-S", "0.0.0.0:80", "-t", "public"]

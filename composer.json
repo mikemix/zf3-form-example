@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "modules/App/src/"
+    }
+  },
+  "require": {
+    "zendframework/zendframework": "^3.0"
+  }
+}
