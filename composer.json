@@ -1,4 +1,7 @@
 {
+  "name": "mikemix/zf3-easy-forms",
+  "license": "MIT",
+  "type": "project",
   "autoload": {
     "psr-4": {
       "App\\": "modules/App/src/"
@@ -6,5 +9,12 @@
   },
   "require": {
     "zendframework/zendframework": "^3.0"
+  },
+  "scripts": {
+    "bootstrap": [
+      "@composer install -o --prefer-dist --no-suggest",
+      "mkdir -p data/cache",
+      "chmod -R 777 data"
+    ]
   }
 }
