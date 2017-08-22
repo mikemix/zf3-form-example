@@ -49,6 +49,10 @@ final class UserFieldset extends Fieldset implements InputFilterProviderInterfac
                 // e-mail element adds its own address validator
                 // so no additional validators are required
             ],
+            'language' => [
+                'required' => true,
+                // select element validates the value against its value options by itself
+            ],
         ];
     }
 }
