@@ -1,23 +1,27 @@
 <?php
 /** @var \App\Front\IntroductionForm $form */
 $form = $this->form->prepare();
-
-$this->headScript()
-    ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js');
-
-$this->headLink()
-    ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css');
 ?>
 
 <form method="post" action="">
-    <?= $this->formCollection($form) ?>
-    <button>Submit!</button>
+    <?= $this->formElement($form->get('csrf')) ?>
+
+    <h2>User</h2>
+    <?= $this->formRow($form->get('user')->get('person')->get('firstName')) ?>
+    <?= $this->formRow($form->get('user')->get('person')->get('lastName')) ?>
+    <?= $this->formRow($form->get('user')->get('email')) ?>
+    <?= $this->formRow($form->get('user')->get('language')) ?>
+    <?= $this->formRow($form->get('user')->get('sex')) ?>
+
+    <button class="btn btn-primary">Submit!</button>
 </form>
 
 <?php if ($form->hasValidated()): ?>
     <hr>
-    <p>Is valid: <?= $form->isValid() ? 'yes': 'no' ?></p>
+
+    <div class="alert alert-<?= $form->isValid() ? 'info': 'danger' ?>">
+        <p>Is valid: <?= $form->isValid() ? 'yes': 'no' ?></p>
+    </div>
 
     <?php if ($form->isValid()): ?>
         <pre><?php print_r($form->getData()) ?></pre>

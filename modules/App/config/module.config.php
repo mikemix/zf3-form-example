@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Zend\Form\View\Helper\FormElement;
 use Zend\Router\Http\Literal;
 
 return [
@@ -28,16 +27,6 @@ return [
     'form_elements' => [
         'factories' => [
             Front\LanguageSelect::class => Factory\Front\LanguageSelectFactory::class,
-        ],
-    ],
-    'view_helpers' => [
-        'delegators' => [
-            FormElement::class => [
-                Factory\View\Helper\FormElementPluginRegistration::class
-            ],
-        ],
-        'factories' => [
-            View\Helper\Select2FormElement::class => Factory\View\Helper\Select2FormElementFactory::class,
         ],
     ],
     'view_manager' => [
