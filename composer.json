@@ -4,7 +4,8 @@
   "type": "project",
   "autoload": {
     "psr-4": {
-      "App\\": "modules/App/src/"
+      "App\\": "modules/App/src/",
+      "BootstrapIntegration\\": "modules/BootstrapIntegration/src/"
     }
   },
   "require": {
