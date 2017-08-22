@@ -2,6 +2,7 @@
 
 namespace App\Front;
 
+use App\Form\Element\Select2;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Form\Fieldset;
@@ -32,6 +33,17 @@ final class UserFieldset extends Fieldset implements InputFilterProviderInterfac
                 'options' => [
                     'label' => 'Language',
                 ],
+            ])
+            ->add([
+                'name' => 'sex',
+                'type' => Select2::class,
+                'options' => [
+                    'label' => 'Sex',
+                    'value_options' => [
+                        'm' => 'Male',
+                        'f' => 'Female',
+                    ],
+                ],
             ]);
     }
 
@@ -52,6 +64,9 @@ final class UserFieldset extends Fieldset implements InputFilterProviderInterfac
             'language' => [
                 'required' => true,
                 // select element validates the value against its value options by itself
+            ],
+            'sex' => [
+                'required' => true,
             ],
         ];
     }

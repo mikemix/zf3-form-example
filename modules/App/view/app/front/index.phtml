@@ -1,6 +1,13 @@
 <?php
 /** @var \App\Front\IntroductionForm $form */
 $form = $this->form->prepare();
+
+$this->headScript()
+    ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    ->appendFile('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js');
+
+$this->headLink()
+    ->appendStylesheet('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css');
 ?>
 
 <p>The form:</p>
