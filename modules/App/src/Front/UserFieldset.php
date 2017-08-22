@@ -16,9 +16,6 @@ final class UserFieldset extends Fieldset implements InputFilterProviderInterfac
             ->add([
                 'name' => 'person',
                 'type' => PersonFieldset::class,
-                'options' => [
-                    'label' => 'Person',
-                ],
             ])
             ->add([
                 'name' => 'email',
