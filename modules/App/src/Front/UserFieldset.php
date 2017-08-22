@@ -3,12 +3,9 @@
 namespace App\Front;
 
 use App\Form\Element\Select2;
-use Zend\Filter\StringTrim;
-use Zend\Filter\StripTags;
 use Zend\Form\Fieldset;
-use Zend\InputFilter\InputFilterProviderInterface;
 
-final class UserFieldset extends Fieldset implements InputFilterProviderInterface
+final class UserFieldset extends Fieldset
 {
     public function init()
     {
@@ -42,29 +39,5 @@ final class UserFieldset extends Fieldset implements InputFilterProviderInterfac
                     ],
                 ],
             ]);
-    }
-
-    public function getInputFilterSpecification()
-    {
-        return [
-            // must not add specification of the fieldset elements
-            // as those elements provide input filters by themselves
-            'email' => [
-                'required' => true,
-                'filters' => [
-                    ['name' => StripTags::class],
-                    ['name' => StringTrim::class],
-                ],
-                // e-mail element adds its own address validator
-                // so no additional validators are required
-            ],
-            'language' => [
-                'required' => true,
-                // select element validates the value against its value options by itself
-            ],
-            'sex' => [
-                'required' => true,
-            ],
-        ];
     }
 }
